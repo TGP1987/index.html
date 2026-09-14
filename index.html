@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lizbin | Ready-to-Use Silverware Rolls</title>
+
+  <meta
+    name="description"
+    content="Lizbin creates prepared silverware roll boxes and crates ready to use for restaurants and small dining businesses throughout the East Bay."
+  />
+
+  <style>
+    :root {
+      --green-dark: #174d35;
+      --green: #287a4b;
+      --green-medium: #4f9b68;
+      --green-light: #dcefe2;
+      --green-pale: #f1f8f3;
+      --cream: #fbfdfb;
+      --white: #ffffff;
+      --text: #24352b;
+      --muted: #65746a;
+      --border: #dce8df;
+      --shadow: 0 12px 35px rgba(23, 77, 53, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 253, 251, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .nav-button {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--green);
+      color: white !important;
+    }
+
+    .nav-button:hover {
+      background: var(--green-dark);
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 90% 15%, rgba(79, 155, 104, 0.20), transparent 30%),
+        linear-gradient(135deg, var(--green-pale), #ffffff);
+      padding: 95px 24px 85px;
+    }
+
+    .hero-container {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border-color: var(--green);
+      color: var(--green-dark);
+      background: white;
+    }
+
+    .button-secondary:hover {
+      background: var(--green-light);
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .box-illustration {
+      min-height: 360px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #e9f5ec, #cde6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .crate {
+      width: 230px;
+      height: 150px;
+      background: #a9d0b4;
+      border: 9px solid #5b986d;
+      border-radius: 8px;
+      transform: perspective(500px) rotateX(8deg) rotateY(-10deg);
+      box-shadow: 15px 20px 35px rgba(23, 77, 53, 0.18);
+      position: relative;
+    }
+
+    .crate::before,
+    .crate::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      height: 8px;
+      background: #5b986d;
+    }
+
+    .crate::before {
+      top: 38px;
+    }
+
+    .crate::after {
+      bottom: 38px;
+    }
+
+    .silverware {
+      position: absolute;
+      top: 12px;
+      left: 45px;
+      width: 140px;
+      height: 115px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+
+    .utensil {
+      width: 7px;
+      height: 100px;
+      background: #dfe5e0;
+      border-radius: 10px;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .utensil::before {
+      content: "";
+      position: absolute;
+      width: 17px;
+      height: 35px;
+      margin-left: -5px;
+      background: #e9eeea;
+      border-radius: 50% 50% 45% 45%;
+    }
+
+    .hero-label {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: white;
+      color: var(--green-dark);
+      padding: 10px 15px;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 85px 24px;
+    }
+
+    .section-container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading span {
+      color: var(--green);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      color: var(--green-dark);
+      margin: 10px 0 15px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 390px;
+      border-radius: 28px;
+      background:
+        linear-gradient(rgba(40,122,75,0.08), rgba(40,122,75,0.08)),
+        repeating-linear-gradient(
+          45deg,
+          #d7eadc,
+          #d7eadc 12px,
+          #c9e2cf 12px,
+          #c9e2cf 24px
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .about-box {
+      background: #f8fbf8;
+      border: 8px solid #6aa67a;
+      width: 80%;
+      height: 240px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      margin-bottom: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .check {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: var(--green-pale);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(23,77,53,0.05);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: var(--green-dark);
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* PRICING */
+
+    .pricing {
+      background: white;
+    }
+
+    .pricing-box {
+      max-width: 850px;
+      margin: auto;
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: white;
+      border-radius: 28px;
+      padding: 45px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .pricing-box h2 {
+      color: white;
+    }
+
+    .pricing-box p {
+      color: #dcefe2;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    .price-note {
+      background: rgba(255,255,255,0.12);
+      padding: 18px;
+      border-radius: 14px;
+      margin: 25px 0;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      background: var(--green-pale);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      min-height: 220px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #dcefe2, #b7d9c1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--green-dark);
+      font-weight: 800;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item:nth-child(2) {
+      background: linear-gradient(145deg, #cbe5d2, #9dc9aa);
+    }
+
+    .gallery-item:nth-child(3) {
+      background: linear-gradient(145deg, #e9f5ec, #c0dfc9);
+    }
+
+    .gallery-item:nth-child(4) {
+      background: linear-gradient(145deg, #b8d9c1, #82b993);
+    }
+
+    .gallery-item:nth-child(5) {
+      background: linear-gradient(145deg, #e0f1e4, #a8cfb1);
+    }
+
+    .gallery-item:nth-child(6) {
+      background: linear-gradient(145deg, #cee7d4, #74ad84);
+    }
+
+    /* REVIEWS */
+
+    .reviews {
+      background: white;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .review {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      background: var(--cream);
+    }
+
+    .stars {
+      color: #e6a929;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .review p {
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .review strong {
+      color: var(--green-dark);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--green-pale);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      min-width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--green-light);
+      display: grid;
+      place-items: center;
+      color: var(--green-dark);
+    }
+
+    .contact-item h3 {
+      font-size: 1rem;
+      color: var(--green-dark);
+    }
+
+    .contact-item p {
+      color: var(--muted);
+    }
+
+    form {
+      background: white;
+      padding: 32px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--green-dark);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #fbfdfb;
+      padding: 13px 14px;
+      border-radius: 11px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--green-medium);
+      box-shadow: 0 0 0 3px rgba(79,155,104,0.12);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    form .button {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 70px 24px;
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: white;
+    }
+
+    .cta p {
+      color: #dcefe2;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #103624;
+      color: #cce2d2;
+      padding: 35px 24px;
+    }
+
+    .footer-container {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer .logo {
+      color: white;
+    }
+
+    .copyright {
+      font-size: 0.88rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .hero-container,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .cards,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      section {
+        padding: 65px 18px;
+      }
+
+      .navbar {
+        padding: 13px 18px;
+      }
+
+      .hero {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-box {
+        padding: 30px 20px;
+      }
+
+      form {
+        padding: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="navbar">
+      <a href="#home" class="logo">
+        <span class="logo-mark">L</span>
+        Lizbin
+      </a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="nav-button">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-container">
+
+        <div>
+          <span class="eyebrow">Serving the East Bay</span>
+
+          <h1>
+            Ready-to-use silverware,
+            made simple.
+          </h1>
+
+          <p>
+            Lizbin prepares organized silverware rolls in convenient
+            boxes and crates, ready for your restaurant or dining business
+            to put straight to work.
+          </p>
+
+          <div class="buttons">
+            <a href="#contact" class="button button-primary">
+              Get a Quote
+            </a>
+
+            <a href="#services" class="button button-secondary">
+              See Our Services
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="box-illustration">
+
+            <div class="crate">
+              <div class="silverware">
+                <span class="utensil"></span>
+                <span class="utensil"></span>
+                <span class="utensil"></span>
+                <span class="utensil"></span>
+                <span class="utensil"></span>
+              </div>
+            </div>
+
+            <div class="hero-label">
+              Prepared. Packed. Ready.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="section-container">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+            <div class="about-box">
+              Organized silverware rolls<br />
+              ready for service.
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <div class="section-heading">
+              <span>About Lizbin</span>
+              <h2>We help restaurants save time before service even starts.</h2>
+            </div>
+
+            <p>
+              At Lizbin, we prepare silverware rolls so restaurant teams
+              can spend less time folding, organizing, and preparing
+              silverware and more time focusing on their guests.
+            </p>
+
+            <p>
+              Our boxes and crates are designed to make prepared silverware
+              easy to store, transport, and grab when your team needs it.
+            </p>
+
+            <ul class="check-list">
+              <li>
+                <span class="check">✓</span>
+                Ready-to-use silverware rolls
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Convenient boxes and crates
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Restaurant-focused service
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                East Bay delivery area
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="section-container">
+
+        <div class="section-heading center">
+          <span>Our Services</span>
+          <h2>Prepared for your business.</h2>
+          <p>
+            Simple, practical solutions for restaurants and small dining
+            businesses that want silverware preparation handled for them.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-icon">🍴</div>
+            <h3>Silverware Rolls</h3>
+            <p>
+              Professionally prepared silverware rolls that are organized
+              and ready to be placed on tables or used during service.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📦</div>
+            <h3>Prepared Boxes</h3>
+            <p>
+              Keep your prepared silverware organized in convenient boxes
+              that make storage and handling easier for your team.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🧺</div>
+            <h3>Ready-to-Use Crates</h3>
+            <p>
+              Larger quantities can be organized into practical crates
+              designed for busy restaurants and dining operations.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="section-container">
+
+        <div class="section-heading center">
+          <span>Pricing</span>
+          <h2>Simple pricing for your needs.</h2>
+          <p>
+            Every restaurant has different service volumes and requirements,
+            so we can provide pricing based on what your business actually needs.
+          </p>
+        </div>
+
+        <div class="pricing-box">
+          <h2>Let's build your order.</h2>
+
+          <p>
+            Tell us how many silverware rolls your business needs,
+            how frequently you need them, and where you're located.
+            We'll help you find the right option.
+          </p>
+
+          <div class="price-note">
+            <strong>Bulk orders & recurring service available.</strong>
+            <br />
+            Contact Lizbin for a personalized quote.
+          </div>
+
+          <a href="#contact" class="button button-secondary">
+            Request a Quote
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+      <div class="section-container">
+
+        <div class="section-heading center">
+          <span>Gallery</span>
+          <h2>Prepared. Organized. Ready to go.</h2>
+          <p>
+            A look at the kind of organized presentation Lizbin brings
+            to your restaurant's silverware preparation.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            Silverware Roll<br />Preparation
+          </div>
+
+          <div class="gallery-item">
+            Organized<br />Boxes
+          </div>
+
+          <div class="gallery-item">
+            Restaurant<br />Ready
+          </div>
+
+          <div class="gallery-item">
+            Bulk<br />Preparation
+          </div>
+
+          <div class="gallery-item">
+            Easy<br />Storage
+          </div>
+
+          <div class="gallery-item">
+            Ready for<br />Service
+          </div>
+
+        </div>
+
+        <!--
+          Replace the gallery placeholders above with real images when available.
+          Example:
+
+          <div class="gallery-item">
+            <img src="images/silverware-rolls.jpg" alt="Lizbin prepared silverware rolls">
+          </div>
+        -->
+
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+      <div class="section-container">
+
+        <div class="section-heading center">
+          <span>Reviews</span>
+          <h2>What our customers say.</h2>
+          <p>
+            Customer reviews can be added here as your Lizbin customer base grows.
+          </p>
+        </div>
+
+        <div class="review-grid">
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Lizbin makes our silverware preparation so much easier.
+              Having everything ready to go saves our team valuable time.”
+            </p>
+            <strong>Restaurant Customer</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              “The boxes make it simple for our staff to keep everything
+              organized and ready for service.”
+            </p>
+            <strong>East Bay Dining Business</strong>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+              “A convenient service that helps us stay prepared during
+              busy shifts.”
+            </p>
+            <strong>Local Restaurant</strong>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-container">
+
+        <div class="contact-grid">
+
+          <div>
+            <div class="section-heading">
+              <span>Contact Lizbin</span>
+              <h2>Let's make silverware preparation easier.</h2>
+              <p>
+                Ready to talk about your restaurant's needs?
+                Give us a call or send a message and we'll get back to you.
+              </p>
+            </div>
+
+            <div class="contact-details">
+
+              <div class="contact-item">
+                <div class="contact-icon">☎</div>
+                <div>
+                  <h3>Phone</h3>
+                  <p>
+                    <a href="tel:9255387300">925-538-7300</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <h3>Service Area</h3>
+                  <p>Throughout the East Bay Area</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">🍴</div>
+                <div>
+                  <h3>Who We Serve</h3>
+                  <p>Restaurants & small dining businesses</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+	  <form
+  	    action="https://formspree.io/f/xvkojlpa"
+  	    method="POST"
+	  >
+  	    <input
+    	      type="hidden"
+              name="_subject"
+              value="New Lizbin Quote Request"
+            />
+
+            <!-- Spam protection -->
+            <input
+              type="text"
+              name="_gotcha"
+              style="display:none"
+            />
+
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="business">Business Name</label>
+              <input
+                type="text"
+                id="business"
+                name="business"
+                placeholder="Restaurant or business name"
+                autocomplete="organization"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your phone number"
+                autocomplete="tel"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="service">What do you need?</label>
+
+              <select id="service" name="service" required>
+                <option value="" disabled selected>
+                  Select a service
+                </option>
+
+                <option value="Silverware Rolls">
+                  Silverware Rolls
+                </option>
+
+                <option value="Prepared Boxes">
+        	  Prepared Boxes
+      	        </option>
+
+      		<option value="Prepared Crates">
+        	  Prepared Crates
+      		</option>
+
+      		<option value="Bulk / Recurring Order">
+        	  Bulk / Recurring Order
+      		</option>
+
+      		<option value="Other">
+        	  Other
+      	        </option>
+    	      </select>
+  	    </div>
+
+  	    <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us a little about what your business needs..."
+                required
+              ></textarea>
+            </div>
+
+  	    <button type="submit" class="button button-primary">
+    	      Request a Quote
+  	    </button>
+	  </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="section-container">
+
+        <h2>Ready to simplify your service?</h2>
+
+        <p>
+          Let Lizbin take silverware preparation off your team's plate.
+        </p>
+
+        <a href="tel:9255387300" class="button button-secondary">
+          Call Lizbin: 925-538-7300
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+
+      <a href="#home" class="logo">
+        <span class="logo-mark">L</span>
+        Lizbin
+      </a>
+
+      <div class="copyright">
+        © 2026 Lizbin. Serving restaurants throughout the East Bay.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
